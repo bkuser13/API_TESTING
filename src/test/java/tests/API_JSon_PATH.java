@@ -100,13 +100,16 @@ public class API_JSon_PATH {
 		
 		Response response = given().accept(ContentType.JSON) //header
 							.and().params(rParamMap) //query param/request param
-							.and().pathParam("employee_id", 1)
-							.when().get(ConfigurationReader.getProperty("url")+"/employee/{employee_id}");
+							.and().pathParam("employee_id", 7222)
+							.when().get(ConfigurationReader.getProperty("url")+"/employees/{employee_id}");
 		JsonPath json = response.jsonPath(); //get Json body and assign to jsonPath object
 		
 		System.out.println(json.getInt("employee_id"));
-		System.out.println(json.getString("employee_name"));
-		System.out.println(json.getString("employee_lastname"));
+		System.out.println(json.getString("first_name"));
+		System.out.println(json.getString("last_name"));
+		System.out.println(json.getString("job_id"));
+		System.out.println(json.getString("salary"));
+		System.out.println(json.getString("links[0].href"));
 		
 		
 		

@@ -1,80 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="4" passed="3" failed="1" skipped="0">
+<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2018-08-06T01:24:43Z" name="Default suite" finished-at="2018-08-06T01:24:47Z" duration-ms="3966">
+  <suite started-at="2018-08-06T16:16:22Z" name="Default suite" finished-at="2018-08-06T16:16:26Z" duration-ms="3571">
     <groups>
     </groups>
-    <test started-at="2018-08-06T01:24:43Z" name="Default test" finished-at="2018-08-06T01:24:47Z" duration-ms="3966">
+    <test started-at="2018-08-06T16:16:22Z" name="Default test" finished-at="2018-08-06T16:16:26Z" duration-ms="3571">
       <class name="tests.API_JSon_PATH">
-        <test-method signature="testWithJsonPath()[pri:0, instance:tests.API_JSon_PATH@394a2528]" started-at="2018-08-06T01:24:43Z" name="testWithJsonPath" finished-at="2018-08-06T01:24:45Z" duration-ms="2215" status="FAIL">
-          <exception class="io.restassured.path.json.exception.JsonPathException">
-            <message>
-              <![CDATA[Failed to parse the JSON document]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[io.restassured.path.json.exception.JsonPathException: Failed to parse the JSON document
-at io.restassured.path.json.JsonPath$ExceptionCatcher.invoke(JsonPath.java:930)
-at io.restassured.path.json.JsonPath$4.doParseWith(JsonPath.java:895)
-at io.restassured.path.json.JsonPath$JsonParser.parseWith(JsonPath.java:975)
-at io.restassured.path.json.JsonPath.get(JsonPath.java:201)
-at io.restassured.path.json.JsonPath.getInt(JsonPath.java:236)
-at tests.API_JSon_PATH.testWithJsonPath(API_JSon_PATH.java:107)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
-at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
-at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-at org.testng.TestRunner.privateRun(TestRunner.java:648)
-at org.testng.TestRunner.run(TestRunner.java:505)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-at org.testng.TestNG.runSuites(TestNG.java:1049)
-at org.testng.TestNG.run(TestNG.java:1017)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: groovy.json.JsonException: Lexing failed on line: 1, column: 1, while reading '<', no possible valid JSON value or punctuation could be recognized.
-at groovy.json.JsonLexer.nextToken(JsonLexer.java:83)
-at groovy.json.JsonLexer$nextToken.call(Unknown Source)
-at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:48)
-at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:113)
-at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:117)
-at io.restassured.internal.path.json.ConfigurableJsonSlurper.parse(ConfigurableJsonSlurper.groovy:97)
-at io.restassured.internal.path.json.ConfigurableJsonSlurper$parse.callCurrent(Unknown Source)
-at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:52)
-at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:154)
-at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:166)
-at io.restassured.internal.path.json.ConfigurableJsonSlurper.parseText(ConfigurableJsonSlurper.groovy:83)
-at io.restassured.path.json.JsonPath$4$1.method(JsonPath.java:893)
-at io.restassured.path.json.JsonPath$ExceptionCatcher.invoke(JsonPath.java:928)
-... 30 more
-]]>
-            </full-stacktrace>
-          </exception> <!-- io.restassured.path.json.exception.JsonPathException -->
+        <test-method signature="testWithJsonPath()[pri:0, instance:tests.API_JSon_PATH@394a2528]" started-at="2018-08-06T16:16:22Z" name="testWithJsonPath" finished-at="2018-08-06T16:16:24Z" duration-ms="2089" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testWithJsonPath -->
-        <test-method signature="verifyRegions()[pri:0, instance:tests.API_JSon_PATH@394a2528]" started-at="2018-08-06T01:24:45Z" name="verifyRegions" finished-at="2018-08-06T01:24:46Z" duration-ms="710" status="PASS">
+        <test-method signature="verifyRegions()[pri:0, instance:tests.API_JSon_PATH@394a2528]" started-at="2018-08-06T16:16:24Z" name="verifyRegions" finished-at="2018-08-06T16:16:25Z" duration-ms="471" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyRegions -->
-        <test-method signature="verifyWithPathParameter()[pri:0, instance:tests.API_JSon_PATH@394a2528]" started-at="2018-08-06T01:24:46Z" name="verifyWithPathParameter" finished-at="2018-08-06T01:24:46Z" duration-ms="312" status="PASS">
+        <test-method signature="verifyWithPathParameter()[pri:0, instance:tests.API_JSon_PATH@394a2528]" started-at="2018-08-06T16:16:25Z" name="verifyWithPathParameter" finished-at="2018-08-06T16:16:25Z" duration-ms="280" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyWithPathParameter -->
-        <test-method signature="verifyWithQueryParameter()[pri:0, instance:tests.API_JSon_PATH@394a2528]" started-at="2018-08-06T01:24:46Z" name="verifyWithQueryParameter" finished-at="2018-08-06T01:24:47Z" duration-ms="696" status="PASS">
+        <test-method signature="verifyWithQueryParameter()[pri:0, instance:tests.API_JSon_PATH@394a2528]" started-at="2018-08-06T16:16:25Z" name="verifyWithQueryParameter" finished-at="2018-08-06T16:16:26Z" duration-ms="704" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyWithQueryParameter -->
