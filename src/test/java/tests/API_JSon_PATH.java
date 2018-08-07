@@ -2,8 +2,12 @@ package tests;
 
 import org.hamcrest.Matchers;
 import static org.hamcrest.Matchers.*;
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
 
+import java.io.File;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.testng.annotations.Test;
@@ -109,14 +113,66 @@ public class API_JSon_PATH {
 		System.out.println(json.getString("last_name"));
 		System.out.println(json.getString("job_id"));
 		System.out.println(json.getString("salary"));
-		System.out.println(json.getString("links[0].href"));
+		System.out.println(json.getString("links[1].href")); // get specific element from array
+		//assign all href into  a list of strings
+		List<String>hrefs = json.getList("links.href");
+		
+		
+	}
+	/*
+	 * Given Accept type Json
+	 * And Params are limit 100
+	 * WHen I send get request to URL "http://34.223.219.142:1212/ords/hr/employee"
+	 * Then status code is 200
+	 * And response content should be JSon
+	 * And all employee data should be returned
+	 */
+	
+	@Test
+	public void testJsonPathWithLists() {
+		
+		Map<String, Integer> rParamMap = new HashMap<>();
+		rParamMap.put("limit", 100);
+		
+		Response response = given().accept(ContentType.JSON)
+							.and().params(rParamMap)
+							.when().get(ConfigurationReader.getProperty("url")+"/employees");
+		
+		assertEquals(response.statusCode(), 200); //check status code
+		JsonPath json = response.jsonPath(); //1st way
+		//JsonPath json = new JsonPath(response.asString()); //2nd way
+		
+		//get all empl_ids into an arrayList
+		List<Integer> empIds = json.getList("items.employee_id");
+		System.out.println("Employee id count: "+empIds.size());
+		assertEquals(empIds.size(), 100);
+		
+		//get all email and assign to arraylist
+		List<String> empEmail = json.getList("items.email");
+		System.out.println("Employee emails count: "+empEmail.size());
+		assertEquals(empEmail.size(), 100);
+		
+		
+		//get all empls ids that are greater than 150
+		
+
+		List<String> empIDList = json.getList("items.findAll{it.employee_id>150}.employee_id");
+		System.out.println(empIDList);
+				
+		
+		
+		//get all employee last_names whose salary is mote than 7000
+		List<String> empSalary =  json.getList("items.findAll{it.salary>7000}.last_name");
+		System.out.println(empSalary);
+		
+		//get all empls ids storing json result in postman into file and reading from that file
+		JsonPath jsonFromFile = new JsonPath(new File("/Users/admin/Downloads/employees.json"));
+		List<String> empIDList2 = jsonFromFile.getList("items.email");
+		System.out.println(empIDList2);
 		
 		
 		
 	}
-	
-	
-	
 	
 	
 	
